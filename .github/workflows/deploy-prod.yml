@@ -126,8 +126,6 @@ jobs:
               ) |
               .[]' <<< "$VARS_JSON_WITH_NEWLINES"
           )
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
 
       - name: Deploy to ${{ github.event.inputs.environment }}
         run: |
