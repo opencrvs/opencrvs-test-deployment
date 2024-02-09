@@ -16,6 +16,7 @@ all:
         sudoer: true
 
       - name: jump
+        state: present
         ssh_keys:
           - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6gPIrkdqGlsFdWIMi+AprVCA9ZSWFZIqvCCHI/ZXLMs/5Rutp0MzDIIK04hkgDtEDfw3llgxBj3FZXTceKM3dBpAqaErLPdcQi95QzKl2p8U41NinT4xUEWO6/psSuKa3uWPkEUI65oVjR3tXXyMTRBTfc8orz2mI2a9AgcwWeFWxmea3kWJUiEPI18CUtpd5jtw59xTgfLH3qChYSfsx+hvTtRJIqiUSfSaSrgUmap2anj0+8+x+dZ14QcrimytQtZ8RNg4GASoNEL8R+ixkdWRvyVb6B0MIYV5tZSIr04udD1rS0QevNR9f2o16uEeyO0G7FG0Ke1dM1ti3NE2PnhQjmE78U/krGhOV8ZYXkyOztVcmo4DGhDd8RTveYLfoQ06T5S2at/TVU2dbJXlqfI0lQ1nvDfHHB0TPzUjZi92rzTCINIDDE9e/AugnNxfSEIVvS7C5qfRI8h3SsbeA1s8Lm2cTZwxvlPRT6+QWToCkj+30Zv1ztNFEOfvBtcU= provision@opencrvs-countryconfig-staging
           - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCtdHFy5Vl6FPgg4awfvCCbhYAwLCLzfhzc74ank25hsmCAoWM52lXIfOVRvG6/z2hBGmQ8hrfth/KAr9PwFVKWRy63QZn/RVsYNbX3MMafVx+udoFyCjfRY4vif0UssrZ+v4nu0gQu9KAjuTwtPUJTwgNxGtd32tBxCiyWB1ZkQh5BGAERgBujUpZXvG1N45W4U4RZ+rsJZxKJfl7CSCYttX19L6mQpOT/ur0elf5PE1cqx+7aTeP2QN+x+WoZ1a8UACJskOm9maIhCfqucaUOuwflW2wkTLmlVR/mhx8oJxFseRsyLNi2mzDpheeuf49iBoLsx5zWKZoEcpiKF8qjtbfRjEtf/KhUODMC+qL1ka+x0CU0taD/rm772iXtsCgVHlZgMVpT5CedJICxd2UFKapm+TtMk+mpZjKI1u/DJon4rpvovJb9j/RKp237aJKtHzK3gRLxl+m7iJyfU4MsujRfrJOec94gl5c7L3nBVd1QwK4kVSnhFiG3S4KYLsE= provision@opencrvs-countryconfig-production-01
