@@ -18,35 +18,32 @@ all:
     # This configuration variable blocks all access to the server, including SSH, except from the IP addresses specified below.
     # This should always be set when configuring a production server if there is no other firewall in front of the server.
     # SSH and other services should never be exposed to the public internet.
-    enable_backups: true
     only_allow_access_from_addresses:
-      # @todo place the IP address of your VPN server or other explicitly allowed traffic sources here
-      - 55.55.55.55 # example VPN server IP address
+      - 164.90.213.144
+    enable_backups: true
+    periodic_restore_from_backup: false
     users:
-      # @todo this is where you define which development team members have access to the server.
-      # If you need to remove access from someone, do not remove them from this list, but instead set their state: absent
-      - name: my-user
+      - name: riku
         ssh_keys:
-          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABg...Z/rhU= user@example.com
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWIF63S4f3z9wQMvWibmvl7MPuJ6EVrkP0HuvgNhcs/4DZYMcR/GRBvV4ldOSYMlBevIXycgGzNDxKJgENUuwIWanjBu7uVAHyD6+cIRD1h63qq7Cjv/2HYTfBDKOrKzPOhA6zWvKO0ZGWsjRXk5LWMCbKOkvKJCxOpj/NVBxeE4FTK5YADYPV3OSsmBtqTHrVLm2sMmShU/2hMYYswWkobidjX65+nK/X+3C+yJbHwiydVvn+QCrFlFfCLPWKe8rUpOxyxofPqWVQh6CHhHfT8okaOc9sOE8Qeip9ljo84DftJh3Xm3ynOdWK1hH2BvRvxNadWqcE1qECbkg4tx2x riku.rouvila@gmail.com
         state: present
         sudoer: true
 
 docker-manager-first:
   hosts:
-    prod-01: # @todo set this to be the hostname of your target server
-      ansible_host: '22.22.22.22' # todo set this to be the hostname of your target server
+    opencrvs-countryconfig-production-01:
+      ansible_host: '161.35.193.11'
       data_label: data1
-      # @todo as production servers are not directly accessible from the internet, you need to use a jump server to access them.
-      ansible_ssh_common_args: '-J jump@55.55.55.55 -o StrictHostKeyChecking=no'
+      ansible_ssh_common_args: '-J jump@164.90.213.144 -o StrictHostKeyChecking=no'
 
-# @todo We recommend you add 2-4 workers for a scaled production deployment
+# We recommend you add 2-4 workers for a scaled production deployment
 # This should depend on the size of your country and the number of end users.
 docker-workers:
   hosts:
-    prod-02: # @todo set this to be the hostname of your target server
-      ansible_host: '33.33.33.33'
+    opencrvs-countryconfig-production-02:
+      ansible_host: '164.90.236.207'
       data_label: data2
-      ansible_ssh_common_args: '-J jump@165.22.110.53 -o StrictHostKeyChecking=no'
+      ansible_ssh_common_args: '-J jump@164.90.213.144 -o StrictHostKeyChecking=no'
 
 backups:
   hosts:
