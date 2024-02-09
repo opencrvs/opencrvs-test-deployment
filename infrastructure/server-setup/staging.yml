@@ -25,7 +25,7 @@ all:
 
 docker-manager-first:
   hosts:
-    staging:
+    opencrvs-countryconfig-staging:
       ansible_host: '161.35.206.222'
       data_label: data1
       ansible_ssh_common_args: '-J jump@164.90.213.144 -o StrictHostKeyChecking=no'

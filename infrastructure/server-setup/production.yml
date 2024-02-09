@@ -47,5 +47,5 @@ docker-workers:
 
 backups:
   hosts:
-    qa:
+    opencrvs-countryconfig-backup:
       ansible_host: '164.90.179.82'
