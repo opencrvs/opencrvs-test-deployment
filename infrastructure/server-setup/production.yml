@@ -48,4 +48,4 @@ docker-workers:
 backups:
   hosts:
     qa:
-      ansible_host: '66.66.66.66'
+      ansible_host: '164.90.179.82'
